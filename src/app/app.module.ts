@@ -13,6 +13,7 @@ import { MarketItemPhotoComponent } from './components/market-item-photo/market-
 import { RoleComponent } from './components/role/role.component';
 import { UnitComponent } from './components/unit/unit.component';
 import { NaviComponent } from './components/navi/navi.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { NaviComponent } from './components/navi/navi.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
