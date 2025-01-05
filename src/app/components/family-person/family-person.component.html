@@ -1,1 +1,12 @@
-<p>family-person works!</p>
+<table class="table">
+    <tr>
+       
+    </tr>
+    <tr *ngFor="let familyPerson of familyPersons">
+        <td>{{familyPerson.id}}</td>  
+        <td>{{familyPerson.roleId}}</td>  
+        <td>{{familyPerson.fullName}}</td>  
+        <td>{{familyPerson.email}}</td>       
+
+    </tr>
+</table>

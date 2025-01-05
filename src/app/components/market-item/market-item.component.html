@@ -1,1 +1,14 @@
-<p>market-item works!</p>
+<table class="table">
+    <tr>
+       
+    </tr>
+    <tr *ngFor="let marketItem of marketItems">
+        <td>{{marketItem.id}}</td>  
+        <td>{{marketItem.categoryId}}</td>  
+        <td>{{marketItem.name}}</td>  
+        <td>{{marketItem.price}}</td>       
+        <td>{{marketItem.quantity}}</td>       
+        <td>{{marketItem.unitId}}</td>       
+
+    </tr>
+</table>

@@ -3,7 +3,7 @@ import { ExpenseItem } from "./expenseItem"
 import { FamilyPerson } from "./familyPerson"
 
 export interface Expense{
-    id:number
+    expenseId:number
     date:Date
     totalAmount:number
     description:string

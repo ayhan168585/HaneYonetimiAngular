@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Income } from '../../models/income';
+import { IncomeService } from '../../services/income.service';
 
 @Component({
   selector: 'app-income',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
   templateUrl: './income.component.html',
   styleUrl: './income.component.css'
 })
-export class IncomeComponent {
+export class IncomeComponent implements OnInit {
+  incomes:Income[]
+  constructor(private incomeService:IncomeService){}
+  ngOnInit(): void {
+   this.getIncomes()
+  }
+  getIncomes(){
+    this.incomeService.getIncomes().subscribe(response=>{
+      this.incomes=response.data
+    })
+  }
+
+
 
 }

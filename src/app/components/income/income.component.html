@@ -1,1 +1,14 @@
-<p>income works!</p>
+<table class="table">
+    <tr>
+       
+    </tr>
+    <tr *ngFor="let income of incomes">
+        <td>{{income.id}}</td>  
+        <td>{{income.description}}</td>  
+        <td>{{income.date}}</td>  
+        <td>{{income.amount}}</td>       
+        <td>{{income.familyPerson}}</td>       
+        <td>{{income.familyPersonId}}</td>       
+
+    </tr>
+</table>
