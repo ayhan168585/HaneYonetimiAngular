@@ -14,6 +14,7 @@ import { ExpenseListDto } from '../../models/expenseListDto';
 export class ExpenseComponent implements OnInit {
 
   expenses:Expense[]
+  filterText=""
 
   constructor(private expenseService:ExpenseService,private activatedRoute:ActivatedRoute){}
   ngOnInit(): void {

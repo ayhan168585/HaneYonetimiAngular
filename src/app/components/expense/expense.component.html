@@ -1,13 +1,29 @@
+<div class="mb-3">
+    <label for="filterText"  class="form-label">Ürün Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün adı yaz">
+  </div>
+  <div class="form-control">
+   {{filterText}} araması yaptınız.
+  </div>
 <table class="table">
-    <tr>
-       
-    </tr>
+    <thead>
+        <tr>
+            <th>Tarih</th>
+            <th>Tanımı</th>
+            <th>KişiId</th>
+            <th>KategoriId</th>
+            <th>Fiyat</th>
+            <th>Kdv'li Fiyat</th>
+         </tr>
+    </thead>
+    
     <tr *ngFor="let expense of expenses">
         <td>{{expense.date}}</td>  
         <td>{{expense.description}}</td>
         <td>{{expense.familyPersonId}}</td>
         <td>{{expense.categoryId}}</td>
-        <td>{{expense.totalAmount}}</td>
+        <td>{{expense.totalAmount | currency:"TRY":"TL ":""}}</td>
+        <td>{{expense.totalAmount | vatAdded:18 | currency:"TRY":"TL ":""}}</td>
 
     </tr>
 </table>
