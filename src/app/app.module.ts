@@ -14,6 +14,7 @@ import { UnitComponent } from './components/unit/unit.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { provideHttpClient } from '@angular/common/http';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
     RoleComponent,
     UnitComponent,
     NaviComponent,
-    VatAddedPipe
+    VatAddedPipe,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,

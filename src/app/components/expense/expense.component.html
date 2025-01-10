@@ -2,7 +2,7 @@
     <label for="filterText"  class="form-label">Ürün Ara</label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün adı yaz">
   </div>
-  <div class="form-control">
+  <div *ngIf="filterText" class="form-control">
    {{filterText}} araması yaptınız.
   </div>
 <table class="table">
@@ -17,7 +17,7 @@
          </tr>
     </thead>
     
-    <tr *ngFor="let expense of expenses">
+    <tr *ngFor="let expense of expenses |filterPipe:filterText">
         <td>{{expense.date}}</td>  
         <td>{{expense.description}}</td>
         <td>{{expense.familyPersonId}}</td>
