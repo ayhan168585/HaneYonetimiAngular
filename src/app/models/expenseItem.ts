@@ -3,10 +3,8 @@ import { MarketItem } from "./marketItem"
 
 export interface ExpenseItem{
     id:number
-    expenseId:number
-    expense:Expense[]
-    marketItemId:number
-    marketItem:MarketItem[]
+    expenseId:number   
+    marketItemId:number  
     quantity:number
     totalPrice:number
     

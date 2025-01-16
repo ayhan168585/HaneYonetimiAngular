@@ -8,9 +8,6 @@ export interface FamilyPerson{
     email:string
     password:string
     profilPicture:string
-    roleId:number
-    role:Role[]
-    expenses:Expense[]
-    incomes:Income[]
+    roleId:number 
     
 }

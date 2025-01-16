@@ -1,0 +1,26 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5>Kategori Ekleme</h5></div>
+        <div class="card-body">
+          <form [formGroup]="categoryAddForm" ngForm="add()">
+            <div class="mb-3">
+              <label for="Name"><h6>Ürün Adı</h6></label>
+              <input
+                class="form-control"
+                type="text"
+                id="Name"
+                formControlName="Name"
+                placeholder="Kategori adı giriniz"
+              />
+            </div>   
+           
+           
+          </form>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-fill btn-primary" (click)="add()">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>

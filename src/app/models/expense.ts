@@ -7,12 +7,10 @@ export interface Expense{
     date:Date
     totalAmount:number
     description:string
-    familyPersonId:number
-    familyPerson:FamilyPerson[]
-    categoryId:number
-    category:Category[]
+    familyPersonId:number   
+    categoryId:number  
     startDate:Date
     endDate:Date
-    expenseItems:ExpenseItem[]
+   
     
 }

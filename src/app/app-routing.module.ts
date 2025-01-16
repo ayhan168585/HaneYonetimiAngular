@@ -5,6 +5,7 @@ import { FamilyPersonComponent } from './components/family-person/family-person.
 import { CategoryComponent } from './components/category/category.component';
 import { IncomeComponent } from './components/income/income.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
 
 const routes: Routes = [
   {path:"",component:ExpenseComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:"categories",component:CategoryComponent},
   {path:"incomes",component:IncomeComponent},
   {path:"marketitems",component:MarketItemComponent},
-  {path:"expenses/category/:id",component:ExpenseComponent}
+  {path:"expenses/category/:id",component:ExpenseComponent},
+  {path:"categories/addcategory",component:CategoryAddComponent}
 
 ];
 

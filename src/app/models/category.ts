@@ -4,6 +4,5 @@ import { MarketItem } from "./marketItem"
 export interface Category{
     id:number
     name:string
-    marketItems:MarketItem[]
-    expenses:Expense[]
+   
 }
