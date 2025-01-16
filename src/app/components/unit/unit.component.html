@@ -1,1 +1,16 @@
-<p>unit works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>BirimId</th>
+            <th>Birim Adı</th>          
+         </tr>
+    </thead>
+    
+    <tr *ngFor="let unit of units">
+        <td>{{unit.id}}</td>  
+        <td>{{unit.name}}</td>  
+       
+
+    </tr>
+</table>
+<button class="btn btn-fill btn-success" routerLink="/units/addunit">Yeni Birim Ekle</button>

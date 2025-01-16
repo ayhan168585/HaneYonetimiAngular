@@ -6,6 +6,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { IncomeComponent } from './components/income/income.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { UnitAddComponent } from './components/unit-add/unit-add.component';
+import { UnitComponent } from './components/unit/unit.component';
 
 const routes: Routes = [
   {path:"",component:ExpenseComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:"incomes",component:IncomeComponent},
   {path:"marketitems",component:MarketItemComponent},
   {path:"expenses/category/:id",component:ExpenseComponent},
-  {path:"categories/addcategory",component:CategoryAddComponent}
+  {path:"categories/addcategory",component:CategoryAddComponent},
+  {path:"units/getall",component:UnitComponent},
+  {path:"units/addunit",component:UnitAddComponent}
 
 ];
 

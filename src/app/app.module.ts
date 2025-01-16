@@ -18,6 +18,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { UnitAddComponent } from './components/unit-add/unit-add.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CategoryAddComponent } from './components/category-add/category-add.com
     NaviComponent,
     VatAddedPipe,
     FilterPipePipe,
-    CategoryAddComponent
+    CategoryAddComponent,
+    UnitAddComponent
   ],
   imports: [
     BrowserModule,
