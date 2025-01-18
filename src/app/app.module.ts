@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ExpenseComponent } from './components/expense/expense.component';
-import { FamilyPersonComponent } from './components/family-person/family-person.component';
 import { IncomeComponent } from './components/income/income.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
 import { RoleComponent } from './components/role/role.component';
@@ -19,13 +18,16 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { UnitAddComponent } from './components/unit-add/unit-add.component';
+import { RoleAddComponent } from './components/role-add/role-add.component';
+import { FamilyPersonComponent } from './components/family-person/family-person.component';
+import { UploadProfilePictureComponent } from './components/upload-profile-picture/upload-profile-picture.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     ExpenseComponent,
-    FamilyPersonComponent,
     IncomeComponent,
     MarketItemComponent,
     RoleComponent,
@@ -34,7 +36,12 @@ import { UnitAddComponent } from './components/unit-add/unit-add.component';
     VatAddedPipe,
     FilterPipePipe,
     CategoryAddComponent,
-    UnitAddComponent
+    UnitAddComponent,
+    RoleAddComponent,
+    FamilyPersonComponent,
+    UploadProfilePictureComponent
+
+    
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,16 @@
-<p>role works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>RoleId</th>
+            <th>Role Adı</th>          
+         </tr>
+    </thead>
+    
+    <tr *ngFor="let role of roles">
+        <td>{{role.id}}</td>  
+        <td>{{role.name}}</td>  
+       
+
+    </tr>
+</table>
+<button class="btn btn-fill btn-success" routerLink="/roles/addrole">Yeni Rol Ekle</button>

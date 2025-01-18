@@ -8,23 +8,30 @@ import { MarketItemComponent } from './components/market-item/market-item.compon
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { UnitAddComponent } from './components/unit-add/unit-add.component';
 import { UnitComponent } from './components/unit/unit.component';
+import { RoleComponent } from './components/role/role.component';
+import { RoleAddComponent } from './components/role-add/role-add.component';
+import { UploadProfilePictureComponent } from './components/upload-profile-picture/upload-profile-picture.component';
 
 const routes: Routes = [
-  {path:"",component:ExpenseComponent},
-  {path:"expenses",component:ExpenseComponent},
-  {path:"familypersons",component:FamilyPersonComponent},
-  {path:"categories",component:CategoryComponent},
-  {path:"incomes",component:IncomeComponent},
-  {path:"marketitems",component:MarketItemComponent},
-  {path:"expenses/category/:id",component:ExpenseComponent},
-  {path:"categories/addcategory",component:CategoryAddComponent},
-  {path:"units/getall",component:UnitComponent},
-  {path:"units/addunit",component:UnitAddComponent}
-
+  { path: '', component: ExpenseComponent },
+  { path: 'expenses', component: ExpenseComponent },
+  { path: 'familypersons', component: FamilyPersonComponent },
+  { path: 'categories', component: CategoryComponent },
+  { path: 'incomes', component: IncomeComponent },
+  { path: 'marketitems', component: MarketItemComponent },
+  { path: 'expenses/category/:id', component: ExpenseComponent },
+  { path: 'categories/addcategory', component: CategoryAddComponent },
+  { path: 'units/getall', component: UnitComponent },
+  { path: 'units/addunit', component: UnitAddComponent },
+  { path: 'roles', component: RoleComponent },
+  { path: 'roles/addrole', component: RoleAddComponent },
+  {path:"familypersons/upload-profile-picture/familyPersonId",component:UploadProfilePictureComponent},
+  {path:"familypersons/addfamilyperson",component:FamilyPersonComponent} 
+ 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

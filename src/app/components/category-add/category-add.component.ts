@@ -65,7 +65,7 @@ export class CategoryAddComponent implements OnInit {
         }
       );
     } else {
-      this.toastrService.error('Ürün ekleme sırasında hata oluştu');
+      this.toastrService.error('Kategori ekleme sırasında hata oluştu');
     }
    
   }

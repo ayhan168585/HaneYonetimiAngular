@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Kişiye Fotoğraf Ekle</h2>
+  
+    <form [formGroup]="photoForm" (ngSubmit)="onSubmit()">
+      <!-- Kişi seçimi (select) -->
+      <div>
+        <label class="form-control" for="personSelect">FamilyPerson Seç:</label>
+        <select class="form-select" id="personSelect" formControlName="selectedPersonId">
+          <option [ngValue]="null" disabled>-- Seçiniz --</option>
+          <option *ngFor="let fp of familyPersons" [value]="fp.id">
+            {{ fp.fullName }} (ID: {{fp.id}})
+          </option>
+        </select>
+  
+        <!-- Hata gösterimi -->
+        <div *ngIf="photoForm.get('selectedPersonId')?.invalid && photoForm.get('selectedPersonId')?.touched">
+          <small style="color: red;">Lütfen bir kişi seçiniz.</small>
+        </div>
+      </div>
+  
+      <!-- Fotoğraf seçme alanı -->
+      <div>
+        <label class="form-control" for="photoFile">Profil Fotoğrafı:</label>
+        <input class="form-control" id="photoFile" type="file" (change)="onFileSelected($event)" />
+      </div>
+  
+      <!-- Formu gönder -->
+      <button class="btn btn-success" type="submit" [disabled]="photoForm.invalid">Fotoğraf Yükle</button>
+    </form>
+  </div>
+  
