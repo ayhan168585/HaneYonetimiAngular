@@ -13,11 +13,8 @@
     <td>{{ familyPerson.fullName }}</td>
     <td>{{ familyPerson.email }}</td>
     <td>
-      <img
-        src="{{ familyPerson.profilePicture }}"
-        class="img-thumbnail"
-        alt="..."
-      />
+      <img [src]="'http://localhost:7039/uploads/profile_pictures/' + familyPerson.profilePicture"
+      class="img-thumbnail" alt="Profil Resmi" />
     </td>
   </tr>
 </table>
@@ -71,12 +68,13 @@
         class="form-select"
         aria-label="Default select example"
         id="roleId"
-        formControlName="roleId"             
+        formControlName="roleId"  
+        value="roleId"           
       >
       <option selected>
        Rol seçiniz
       </option>
-        <option *ngFor="let role of roles" [ngValue]="">
+        <option *ngFor="let role of roles" [ngValue]="role.id">
           {{ role.name }}
         </option>
       </select>

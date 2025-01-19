@@ -44,7 +44,6 @@ export class FamilyPersonComponent implements OnInit {
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      profilePicture:["",Validators.required],
       roleId: [0, Validators.required]
     });
   }
@@ -93,4 +92,12 @@ export class FamilyPersonComponent implements OnInit {
       this.roles=response.data
     })
   }
+  // photoPath(fileName: string): string {
+  //   if (!fileName) {
+  //     // Eğer fotoğraf yoksa default resim
+  //     return 'assets/no-photo.png'; 
+  //   }
+  //   // Gerçek backend URL’nize göre ayarlayın
+  //   return `'https://localhost:7039/api/wwwroot/uploads/profile_pictures/${fileName}`;
+  // }
 }
