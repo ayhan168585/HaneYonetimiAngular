@@ -4,6 +4,7 @@ import { FamilyPersonService } from '../../services/family-person.service';
 import { FamilyPerson } from '../../models/familyPerson';
 import { Role } from '../../models/role';
 import { RoleService } from '../../services/role.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-family-person',
@@ -27,7 +28,8 @@ export class FamilyPersonComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private familyPersonService: FamilyPersonService,
-    private roleService:RoleService
+    private roleService:RoleService,
+    private toastrService:ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -69,15 +71,15 @@ export class FamilyPersonComponent implements OnInit {
           console.log('Kişi eklendi:', createdPerson);
           // Yeni oluşturulan kaydın Id'sini saklıyoruz
           this.createdPersonId = createdPerson.id;
-          alert('Kişi başarıyla eklendi. Eğer fotoğraf eklemek isterseniz aşağıdan yükleyebilirsiniz.');
+          this.toastrService.success("Kişi başarıyla eklendi. Eğer fotoğraf eklemek isterseniz aşağıdan yükleyebilirsiniz.")
         },
         error: (err) => {
           console.error('Kişi ekleme hatası:', err);
-          alert('Kişi eklerken hata oluştu!');
+         this.toastrService.error("Kişi eklerken hata oluştu!")
         }
       });
     } else {
-      alert('Lütfen tüm gerekli alanları doldurun.');
+     this.toastrService.warning("Lütfen tüm gerekli alanları doldurun.")
     }
   }
 
