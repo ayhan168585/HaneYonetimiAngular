@@ -7,7 +7,7 @@ export interface MarketItem{
     name:string
     price:number
     quantity:number
-    categoryId:number   
-    unitId:number  
+    categoryName:string   
+    unitName:string  
   
 }

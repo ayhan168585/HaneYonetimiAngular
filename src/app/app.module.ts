@@ -13,7 +13,7 @@ import { MarketItemComponent } from './components/market-item/market-item.compon
 import { RoleComponent } from './components/role/role.component';
 import { UnitComponent } from './components/unit/unit.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
@@ -21,6 +21,10 @@ import { UnitAddComponent } from './components/unit-add/unit-add.component';
 import { RoleAddComponent } from './components/role-add/role-add.component';
 import { FamilyPersonComponent } from './components/family-person/family-person.component';
 import { UploadProfilePictureComponent } from './components/upload-profile-picture/upload-profile-picture.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ReportComponent } from './components/report/report.component';
 
 
 @NgModule({
@@ -39,7 +43,10 @@ import { UploadProfilePictureComponent } from './components/upload-profile-pictu
     UnitAddComponent,
     RoleAddComponent,
     FamilyPersonComponent,
-    UploadProfilePictureComponent
+    UploadProfilePictureComponent,
+    MainpageComponent,
+    LoginComponent,
+    ReportComponent
 
     
   ],
@@ -55,8 +62,17 @@ import { UploadProfilePictureComponent } from './components/upload-profile-pictu
     })
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideHttpClient(
+      withInterceptors([AuthInterceptor])
+    ),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useValue: AuthInterceptor,  // Fonksiyon tabanlı interceptor
+      multi: true
+    }
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <div class="mb-3">
-    <label for="filterText"  class="form-label">Ürün Ara</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün adı yaz">
+    <label for="filterText"  class="form-label">Harcama Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="harcama adı yaz">
   </div>
   <div *ngIf="filterText" class="form-control">
    {{filterText}} araması yaptınız.
@@ -27,3 +27,4 @@
 
     </tr>
 </table>
+<button class="btn btn-success" routerLink="expenses/addexpense">Yeni Harcama Ekle</button>

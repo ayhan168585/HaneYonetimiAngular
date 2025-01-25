@@ -13,7 +13,7 @@ export class MarketItemService {
   constructor(private httpClient:HttpClient) { }
 
   getMarketItems():Observable<ListResponseModel<MarketItem>>{
-    let newPath=this.apiUrl+"marketitems/getall"
+    let newPath=this.apiUrl+"marketitems/marketitemlists"
     return this.httpClient.get<ListResponseModel<MarketItem>>(newPath)
   }
 }

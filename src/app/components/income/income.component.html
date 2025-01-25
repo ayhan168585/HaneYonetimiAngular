@@ -1,13 +1,40 @@
-<table class="table">
-    <tr>
-       
-    </tr>
-    <tr *ngFor="let income of incomes">
-        <td>{{income.id}}</td>  
-        <td>{{income.description}}</td>  
-        <td>{{income.date}}</td>  
-        <td>{{income.amount}}</td>       
-        <td>{{income.familyPersonId}}</td>       
-
-    </tr>
-</table>
+<div class="card">
+    <div class="card-header">
+      <h4 class="card-title"> Gelir Tablosu</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class=" text-primary">
+            <th>
+              Tarih
+            </th>  
+            <th>
+                Kişi Id
+              </th>  
+              <th>
+                Açıklama
+              </th>  
+              <th>
+                Miktar
+              </th>       
+          </thead>
+          <tbody>
+            <tr *ngFor="let income of incomes">
+              <td>
+               {{income.date}}
+              </td>     <td>
+                {{income.familyPersonId}}
+               </td>     <td>
+                {{income.description}}
+               </td>     <td>
+                {{income.amount}}
+               </td>           
+            </tr>         
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" routerLink="incomes/addincome">Yeni Gelir Ekle</button>
+  

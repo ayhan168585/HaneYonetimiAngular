@@ -24,19 +24,19 @@ export class CategoryAddComponent implements OnInit {
     private toastrService:ToastrService
   ) {}
   ngOnInit(): void {
-    this.categoryService.getCategories()
     this.createCategoryAddForm()
   }
 
   createCategoryAddForm() {
     this.categoryAddForm = this.formBuilder.group({
-      Name: ['', Validators.required],
+      Name:["",Validators.required]
+
     });
   }
 
   add() {
     if (this.categoryAddForm.valid) {
-      let categoryModel = Object.assign({}, this.categoryAddForm.value);
+      let categoryModel = Object.assign({},this.categoryAddForm.value);
       this.categoryService.add(categoryModel).subscribe(
         (response) => {
           categoryModel = response;
@@ -47,20 +47,28 @@ export class CategoryAddComponent implements OnInit {
          
         },
         (responseError) => {
-          if (responseError.error.ValidationErrors.length > 0) {
-           
+          // Hata nesnesi varsa ve ValidationErrors bir dizi ise
+          if (
+            responseError.error?.ValidationErrors &&
+            Array.isArray(responseError.error.ValidationErrors) &&
+            responseError.error.ValidationErrors.length > 0
+          ) {
             for (
               let i = 0;
               i < responseError.error.ValidationErrors.length;
               i++
             ) {
-              console.log(responseError)
-
               this.toastrService.error(
                 responseError.error.ValidationErrors[i].ErrorMessage,
                 'Doğrulama Hatası'
               );
             }
+          } else {
+            // Beklenmeyen bir hata durumunu yönetmek için genel bir mesaj
+            this.toastrService.error(
+              'Ürün ekleme sırasında beklenmeyen bir hata oluştu.',
+              'Hata'
+            );
           }
         }
       );

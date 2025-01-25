@@ -20,7 +20,7 @@ export class CategoryService {
        
         }
 
-        add(category:Category){
+        add(category:Category):Observable<any>{
           return this.httpClient.post(this.apiUrl+"categories/addcategory",category)
         }
 }

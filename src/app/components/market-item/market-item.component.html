@@ -1,14 +1,47 @@
-<table class="table">
-    <tr>
-       
-    </tr>
-    <tr *ngFor="let marketItem of marketItems">
-        <td>{{marketItem.id}}</td>  
-        <td>{{marketItem.categoryId}}</td>  
-        <td>{{marketItem.name}}</td>  
-        <td>{{marketItem.price}}</td>       
-        <td>{{marketItem.quantity}}</td>       
-        <td>{{marketItem.unitId}}</td>       
-
-    </tr>
-</table>
+<div class="card">
+    <div class="card-header">
+      <h4 class="card-title"> Ürünler</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class=" text-primary">
+            <th>
+              Ürün Adı
+            </th>  
+            <th>
+               Kategori
+              </th>  
+              <th>
+                Birim
+              </th>  
+              <th>
+                Miktar
+              </th>  
+              <th>
+                Fiyat
+              </th>       
+          </thead>
+          <tbody>
+            <tr *ngFor="let marketitem of marketItems">
+              <td>
+               {{marketitem.name}}
+              </td>     
+             {{marketitem.categoryName}}
+              <td>
+              {{marketitem.unitName}}
+               </td>     
+               <td>
+                {{marketitem.quantity}}
+               </td>     
+               <td>
+                {{marketitem.price}}
+               </td>           
+            </tr>         
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" routerLink="marketItems/add-market-item">Yeni Ürün Ekle</button>
+  

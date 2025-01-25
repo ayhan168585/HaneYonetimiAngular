@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/ac5a55be-7000-4bb0-b262-776004d068bc/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/HaneYonetimiAngular",
+    "appService.deploySubpath": "."
+}
